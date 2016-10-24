@@ -1,0 +1,6 @@
+'.source.oftlisp':
+	'editor':
+		'autoIndentOnPaste': false
+		'commentStart': ';'
+		'softTabs': true
+		'tabLength': 2

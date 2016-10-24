@@ -1,0 +1,148 @@
+fileTypes: [
+	'oft'
+]
+name: 'OftLisp'
+patterns: [
+	{
+		begin: ';'
+		end: '$\n?'
+		name: 'comment.line.semicolon.oftlisp'
+	}
+	{
+		match: '\''
+		name: 'punctuation.escape.oftlisp'
+	}
+	{
+		include: '#builtins'
+	}
+	{
+		include: '#list'
+	}
+	{
+		include: '#map'
+	}
+	{
+		include: '#number'
+	}
+	{
+		include: '#sexpr'
+	}
+	{
+		include: '#string'
+	}
+	{
+		include: '#symbol'
+	}
+]
+repository:
+	builtins:
+		patterns: [
+			{
+				match: '''(?x)(
+				->>?      |
+				defmacro  |
+				defn      |
+				def       |
+				join      |
+				lambda    |
+				map       |
+				nil\\?    |
+				print     |
+				println   |
+				to-string )
+				'''
+				name: 'support.function.oftlisp'
+			}
+			{
+				match: '\\b(false|nil|true)\\b'
+				captures:
+					1:
+						name: 'constant.language.oftlisp'
+			}
+		]
+	number:
+		patterns: [
+			{
+				match: '0x[0-9a-fA-F]+(\\.[0-9a-fA-F]+)?'
+				name: 'constant.numeric.hexadecimal.oftlisp'
+			}
+			{
+				match: '0o[0-7]+(\\.[0-7]+)?'
+				name: 'constant.numeric.octal.oftlisp'
+			}
+			{
+				match: '0b[01]+(\\.[01]+)?'
+				name: 'constant.numeric.binary.oftlisp'
+			}
+			{
+				match: '[0-9]+(\\.[0-9]+)?'
+				name: 'constant.numeric.decimal.oftlisp'
+			}
+		]
+	sexpr:
+		patterns: [
+			{
+				begin: '\\('
+				beginCaptures:
+					0:
+						name: 'punctuation.expression.begin.oftlisp'
+				end: '\\)'
+				endCaptures:
+					0:
+						name: 'punctuation.expression.end.oftlisp'
+				patterns: [
+					{
+						include: '#builtins'
+					}
+					{
+						include: '#list'
+					}
+					{
+						include: '#map'
+					}
+					{
+						include: '#number'
+					}
+					{
+						include: '#sexpr'
+					}
+					{
+						include: '#string'
+					}
+					{
+						include: '#symbol'
+					}
+				]
+			}
+		]
+	string:
+		patterns: [
+			{
+				begin: '"'
+				beginCaptures:
+					0:
+						name: 'punctuation.definition.string.begin.oftlisp'
+				end: '"'
+				endCaptures:
+					0:
+						name: 'punctuation.definition.string.end.oftlisp'
+				name: 'string.quoted.double.oftlisp'
+				patterns: [
+					{
+						include: '#string_escape'
+					}
+				]
+			}
+		]
+	string_escape:
+		patterns: [
+			{
+				match: '\\\\[\\\\nrt"]'
+				name: 'constant.character.escape.oftlisp'
+			}
+			{
+				match: '\\\\.'
+				name: 'invalid.illegal.unknown-escape.oftlisp'
+			}
+		]
+scopeName: 'source.oftlisp'

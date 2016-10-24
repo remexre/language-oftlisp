@@ -1,0 +1,16 @@
+{
+	"name": "language-oftlisp",
+	"version": "0.1.0",
+	"description": "Implements syntax highlighting for OftLisp.",
+	"keywords": [
+		"language",
+		"oftlisp"
+	],
+	"repository": "https://github.com/remexre/language-oftlisp",
+	"license": "MIT",
+	"engines": {
+		"atom": ">=1.0.0 <2.0.0"
+	},
+	"dependencies": {
+	}
+}
