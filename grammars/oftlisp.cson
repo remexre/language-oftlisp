@@ -40,11 +40,14 @@ repository:
 			{
 				match: '''(?x)(
 				->>?      |
+				append    |
 				defmacro  |
 				defn      |
 				def       |
+				fn        |
+				import    |
 				join      |
-				lambda    |
+				list      |
 				map       |
 				nil\\?    |
 				print     |
