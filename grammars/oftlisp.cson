@@ -39,20 +39,18 @@ repository:
 		patterns: [
 			{
 				match: '''(?x)(
-				->>?      |
-				append    |
-				defmacro  |
-				defn      |
-				def       |
-				fn        |
-				import    |
-				join      |
-				list      |
-				map       |
-				nil\\?    |
-				print     |
-				println   |
-				to-string )
+				# | % | ->>? |
+				append       |
+				defmacro     |
+				defn         |
+				def          |
+				fn           |
+				import       |
+				join         |
+				list         |
+				map          |
+				print(ln)?   |
+				to-string    )
 				'''
 				name: 'support.function.oftlisp'
 			}
