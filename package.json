@@ -1,6 +1,6 @@
 {
   "name": "language-oftlisp",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Implements syntax highlighting for OftLisp.",
   "keywords": [
     "language",
