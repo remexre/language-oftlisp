@@ -4,16 +4,14 @@ fileTypes: [
 name: 'OftLisp'
 patterns: [
 	{
-		begin: ';'
-		end: '$\n?'
-		name: 'comment.line.semicolon.oftlisp'
-	}
-	{
 		match: '\''
 		name: 'punctuation.escape.oftlisp'
 	}
 	{
 		include: '#builtins'
+	}
+	{
+		include: '#comment'
 	}
 	{
 		include: '#list'
@@ -61,6 +59,14 @@ repository:
 						name: 'constant.language.oftlisp'
 			}
 		]
+	comment:
+		patterns: [
+			{
+				begin: ';'
+				end: '$\n?'
+				name: 'comment.line.semicolon.oftlisp'
+			}
+		]
 	number:
 		patterns: [
 			{
@@ -94,6 +100,9 @@ repository:
 				patterns: [
 					{
 						include: '#builtins'
+					}
+					{
+						include: '#comment'
 					}
 					{
 						include: '#list'
