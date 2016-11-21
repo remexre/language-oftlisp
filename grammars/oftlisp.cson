@@ -37,36 +37,36 @@ repository:
 		patterns: [
 			{
 				match: '''(?x)(
-				[#%<>=+*/-]  |
-				-> | >= | <= |
-				and          |
-				append       |
-				cond         |
-				defmacro     |
-				defn         |
-				def          |
-				each         |
-				error        |
-				filter       |
-				fn           |
-				ident        |
-				if           |
-				import       |
-				in\\?        |
-				join         |
-				len          |
-				let\\*?      |
-				list         |
-				make-map     |
-				map          |
-				not          |
-				or           |
-				prepend      |
-				print(ln)?   |
-				progn        |
-				switch       |
-				symbol       |
-				to-string    )
+				[#%<>=+*/-]   |
+				-> | >= | <=  |
+				and           |
+				append        |
+				cond          |
+				defmacro      |
+				defn          |
+				def           |
+				each          |
+				error         |
+				filter        |
+				fn            |
+				ident         |
+				if            |
+				import        |
+				in\\?         |
+				join          |
+				len           |
+				let(\\*|rec)? |
+				list          |
+				make-map      |
+				map           |
+				not           |
+				or            |
+				prepend       |
+				print(ln)?    |
+				progn         |
+				switch        |
+				symbol        |
+				to-string     )
 				'''
 				name: 'support.function.oftlisp'
 			}
