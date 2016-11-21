@@ -37,17 +37,34 @@ repository:
 		patterns: [
 			{
 				match: '''(?x)(
-				# | % | ->>? |
+				[#%<>=+*/-]  |
+				-> | >= | <= |
+				and          |
 				append       |
+				cond         |
 				defmacro     |
 				defn         |
 				def          |
+				each         |
+				filter       |
 				fn           |
+				ident        |
+				if           |
 				import       |
+				in\\?        |
 				join         |
+				len          |
+				let\\*?      |
 				list         |
+				make-map     |
 				map          |
+				not          |
+				or           |
+				prepend      |
 				print(ln)?   |
+				progn        |
+				switch       |
+				symbol       |
 				to-string    )
 				'''
 				name: 'support.function.oftlisp'
@@ -153,6 +170,13 @@ repository:
 			{
 				match: '\\\\.'
 				name: 'invalid.illegal.unknown-escape.oftlisp'
+			}
+		]
+	symbol:
+		patterns: [
+			{
+				match: '[a-zA-Z0-9<=>?*/+-]+'
+				name: 'symbol.oftlisp'
 			}
 		]
 scopeName: 'source.oftlisp'
